@@ -5,5 +5,30 @@
 {% block title %} Tienda {% endblock title %}
 
 {% block content %}
-<h1>Tienda</h1>
+<!-- Heading -->
+<div class="container">
+  <div class="" style="float:right;">
+    {% if request.user.is_authenticated %}
+    {% include 'carro/widget.html' %}
+    {% else %}
+    <div class="alert alert-warning text-center">Login para ver carro</div>
+    {% endif %}
+  </div>
+  <div class="row">
+    {% for producto in productos %}
+    <div class="col">
+      <div class="card" style="width:12rem; margin:5px 5px;">
+        <img class="card-img-top" src="{{producto.imagen.url}}" alt="imagen de producto">
+        <div class="card-body">
+          <h5 class="card-title">{{producto.nombre}}</h5>
+          <p class="card-text">$&nbsp;{{producto.precio}}</p>
+        </div>
+        <div class="card-footer text-center">
+          <a href="{% url 'carro:agregar' producto.id %}" class="btn btn-success">Agregar al carro</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
 {% endblock content %}
