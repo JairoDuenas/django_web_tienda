@@ -31,7 +31,19 @@
       <span class="site-heading-lower">Gestión de Pedidos</span>
     </h1>
   </div>
-  
+
+  <div class="container text-end m-3 text-light">
+    {% if user.is_authenticated %}
+    Hola {{user.username}} &nbsp; <a class="btn btn-info btn-lg" role="button" href="{% url 'cerrar_sesion' %}"
+      class="text-light">Cerrar sesión</a>
+    {% else %}
+    <div>
+      <a class="btn btn-primary btn-lg" role="button" href="{% url 'logear' %}">Login</a>
+      <a class="btn btn-success btn-lg" role="button" href="{% url 'autenticacion' %}">Registrarse</a>
+    </div>
+    {% endif %}
+  </div>
+
   {% include 'components/navbar.html' %}
 
   {% block content %}
