@@ -16,7 +16,7 @@
             href="{% url 'servicios' %}">Servicios</a>
         </li>
         <li class="footer-item py-2 {% if request.path == '/tienda/' %}active{% endif %} px-lg-4"><a
-            class="footer-link" href="#">Tienda</a>
+            class="footer-link" href="{% url 'tienda' %}">Tienda</a>
         </li>
         <li class="footer-item py-2 {% if request.path == '/contacto/' %}active{% endif %} px-lg-4"><a
             class="footer-link" href="{% url 'contacto' %}">Contacto</a>
