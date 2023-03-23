@@ -22,7 +22,7 @@
             class="footer-link" href="#">Contacto</a>
         </li>
         <li class="footer-item py-2 {% if request.path == '/blog/' %}active{% endif %} px-lg-4"><a
-          class="footer-link" href="#">Blog</a>
+          class="footer-link" href="{% url 'blog' %}">Blog</a>
       </li>
       </ul>
     </div>
