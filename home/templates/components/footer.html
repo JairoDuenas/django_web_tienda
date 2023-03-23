@@ -13,7 +13,7 @@
             href="{% url 'home' %}">Inicio</a>
         </li>
         <li class="footer-item py-2 {% if request.path == '/servicios/' %}active{% endif %} px-lg-4"><a class="footer-link"
-            href="#">Servicios</a>
+            href="{% url 'servicios' %}">Servicios</a>
         </li>
         <li class="footer-item py-2 {% if request.path == '/tienda/' %}active{% endif %} px-lg-4"><a
             class="footer-link" href="#">Tienda</a>
