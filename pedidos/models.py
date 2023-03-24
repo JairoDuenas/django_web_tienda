@@ -11,6 +11,9 @@ class Pedido(models.Model):
   user = models.ForeignKey(User, on_delete=models.CASCADE)
   created_at = models.DateTimeField(auto_now_add=True)
 
+  def __str__(self) -> str:
+    return self.user, self.created_at
+
 @property
 def total(self):
   return self.lineapedido_set.agregate(
